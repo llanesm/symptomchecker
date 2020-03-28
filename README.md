@@ -1,5 +1,5 @@
-Beaverhacks 2020 Hackathon
-Team Toy Box
+Beaverhacks 2020 Hackathon,
+Team Toy Box,
 Corona Symptom Checker
 
 The current pandemic is circulating in the population during a 
