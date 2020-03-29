@@ -183,3 +183,39 @@ class Illness:
         if diarrhea == "yes":
             self._corona_score += 5
             self._flu_score += 5
+
+    def score(self):
+        """Provides results to user"""
+        scores = []
+        scores.append(int(self._flu_score))
+        scores.append(int(self._corona_score))
+        scores.append(int(self._cold_score))
+        scores.append(int(self._allergy_score))
+        scores.sort()
+
+        print("Based on your answers, your symptoms are most closely correlated with: ")
+        if scores[-1] == self._flu_score:
+            print('Flu')
+        elif scores[-1] == self._cold_score:
+            print('Corona Virus')
+        elif scores[-1] == self._cold_score:
+            print('Cold')
+        else:
+            print('Allergy')
+
+        print("Another potential could be: ")
+        if scores[-2] == self._flu_score:
+            print('Flu')
+        elif scores[-2] == self._cold_score:
+            print('Corona Virus')
+        elif scores[-2] == self._cold_score:
+            print('Cold')
+        else:
+            print('Allergy')
+
+        print('\nNote that these findings are from http://www.kdheks.gov/coronavirus/toolkit/Cold_vs._Flu_vs._Allergies_vs._Coronavirus.pdf')
+        print("For testing and diagnosis, please contact your healthcare provider.")
+
+if __name__ == '__main__':
+    il = Illness()
+    il.questionnaire()
